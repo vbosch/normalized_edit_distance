@@ -1,7 +1,8 @@
 normalized_edit_distance
 ===========
 
-	Implementation of the fast computation Normalized Edit Distance algorithm as defined by Enrique Vidal, Andrés Marzal and Pablo Aibar
+	Implementation of the fast computation Normalized Edit Distance algorithm 
+	as defined by Enrique Vidal, Andrés Marzal and Pablo Aibar.
 	[ IEEE Transactions on Pattern Analysis and Machine Intelligence Vol 17, NO. 9 SEPTEMBER 1995 ]
 
 Features

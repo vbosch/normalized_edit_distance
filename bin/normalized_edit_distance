@@ -5,3 +5,34 @@ require File.expand_path(
 
 # Put your code here
 
+
+require 'trollop'
+require 'ap'
+
+opts = Trollop::options do
+	version "normalized_edit_distance 0.0.1 (c) 2011 Vicente Bosch Campos"
+	banner <<-EOS
+normalized_edit_distance (NED) is a command tool to launch a basic NED where the cost functions are the same for all characters.
+Usage:
+	normalized_edit_distance [options]
+	where [options] are:
+EOS
+
+opt :x_string, "base string on which to perform the normalized edit distance", :type => :string
+opt :y_string, "string against which the normalized edit distance will be calculared ", :type => :string
+opt :insertion, "Insertion cost to use in the normalized edit distance", :type => :int, :default => 3
+opt :deletion, "Deletion cost to use in the normalized edit distance", :type => :int, :default => 0
+opt :substitution, "Substitution cost to use in the normalized edit distance", :type => :int, :default => 2
+end
+
+#Defining special considerations for the entry data
+      
+Trollop::die :x_string, "base X string was not defined" unless opts[:x_string]
+Trollop::die :y_string, "Y string was not defined" unless opts[:y_string]
+
+Trollop::die :insertion, "Insertion operation cost must be greater or equal to 0" unless opts[:insertion] >= 0
+Trollop::die :deletion, "Insertion operation cost must be greater or equal to 0" unless opts[:deletion] >= 0
+Trollop::die :substitution, "Insertion operation cost must be greater or equal to 0" unless opts[:substitution] >= 0
+           
+ap opts
+
