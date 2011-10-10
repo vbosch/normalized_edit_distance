@@ -1,12 +1,14 @@
 normalized_edit_distance
 ===========
 
-FIXME (describe your package)
+	Implementation of the fast computation Normalized Edit Distance algorithm as defined by Enrique Vidal, Andrés Marzal and Pablo Aibar
+	[ IEEE Transactions on Pattern Analysis and Machine Intelligence Vol 17, NO. 9 SEPTEMBER 1995 ]
 
 Features
 --------
 
-* FIXME (list of features and unsolved problems)
+	Calculation of the normalized edition distance for both strings and vector based input.
+
 
 Examples
 --------
@@ -16,7 +18,7 @@ Examples
 Requirements
 ------------
 
-* FIXME (list of requirements)
+	None
 
 Install
 -------
@@ -26,19 +28,14 @@ Install
 Author
 ------
 
-Original author: FIXME (author's name)
-
-Contributors:
-
-* FIXME (contributor 1?)
-* FIXME (contributor 2?)
+Original author: Vicente Bosch Campos
 
 License
 -------
 
-(The MIT License) FIXME (different license?)
+(The MIT License)
 
-Copyright (c) 2011 FIXME (author's name)
+Copyright (c) 2011 Vicente Bosch Campos
 
 Permission is hereby granted, free of charge, to any person obtaining
 a copy of this software and associated documentation files (the
