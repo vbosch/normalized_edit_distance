@@ -4,8 +4,6 @@ require File.expand_path(
     File.join(File.dirname(__FILE__), %w[.. lib normalized_edit_distance]))
 
 # Put your code here
-
-
 require 'trollop'
 require 'ap'
 
@@ -36,3 +34,8 @@ Trollop::die :substitution, "Insertion operation cost must be greater or equal t
            
 ap opts
 
+fpned = NormalizedEditDistance::FPNED.new(opts[:x_string],opts[:y_string])
+
+fpned.cost_function = NormalizedEditDistance::StrincCostFunction.new
+
+puts fpned.calculate
