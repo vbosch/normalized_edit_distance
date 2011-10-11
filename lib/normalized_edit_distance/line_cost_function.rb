@@ -1,25 +1,19 @@
 module NormalizedEditDistance
-
-  class StrincCostFunction
+  class LineCostFunction
     def initialize
-
-      @costs = Hash.new
-      @costs[:delete]=2
-      @costs[:insert]=2
-      @costs[:substitute]=3
+      @costs[:delete]=1.0
+      @costs[:insert]=1.0
+      @costs[:substitute]=2.0
     end
+
 
     def cost(from,to)
 
-      return @costs[:insert] if insertion?(from,to)
+      return @costs[:insert] * (to[0]-to[1]).abs if insertion?(from,to)
 
-      return @costs[:delete] if deletion?(from,to)
+      return @costs[:delete] * (from[0]-from[1]).abs if deletion?(from,to)
 
-      if from == to
-        0
-      else
-        @costs[:substitute]
-      end
+      @costs[:substitute]* ((to[0]-from[0]).abs + (to[1]-from[1]).abs)
 
     end
 
