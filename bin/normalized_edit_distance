@@ -17,7 +17,7 @@ Usage:
 EOS
 
 opt :x_string, "base string on which to perform the normalized edit distance", :type => :string
-opt :y_string, "string against which the normalized edit distance will be calculared ", :type => :string
+opt :y_string, "string against which the normalized edit distance will be calculated ", :type => :string
 opt :insertion_factor, "Insertion cost to use in the normalized edit distance", :type => :int, :default => 3
 opt :deletion_factor, "Deletion cost to use in the normalized edit distance", :type => :int, :default => 2
 opt :substitution_factor, "Substitution cost to use in the normalized edit distance", :type => :int, :default => 2

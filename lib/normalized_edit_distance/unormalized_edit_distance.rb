@@ -20,12 +20,10 @@ module NormalizedEditDistance
 
       (1..@x.length).each do |i|
         (1..@y.length).each do |j|
-
-          puts "at #{i}-#{j} #{@x[i-1]} #{@y[j-1]} "
+          #puts "at #{i}-#{j} #{@x[i-1]} #{@y[j-1]} "
           update_position(i, j)
         end
       end
-      debugger
       @weight_matrix[@y.length,@x.length] / @length_matrix[@y.length,@x.length].to_f
 
     end
@@ -41,18 +39,18 @@ module NormalizedEditDistance
 
     def update_position(i, j)
       @weight_matrix[i, j]=calculate_substitution_cost(i,j); @length_matrix[i, j]=calculate_substitution_length(i,j)
-      puts @weight_matrix[i, j]
+      #puts @weight_matrix[i, j]
       w_prime = calculate_deletion_cost(i,j); l_prime=calculate_deletion_length(i, j)
-      puts w_prime
+      #puts w_prime
       if update?(i, j, l_prime, w_prime)
-        puts "DELETION"
+        #puts "DELETION"
         @weight_matrix[i, j]=w_prime
         @length_matrix[i, j]=l_prime
       end
       w_prime = calculate_insertion_cost(i, j); l_prime=calculate_insertion_length(i, j)
-      puts w_prime
+      #puts w_prime
       if update?(i, j, l_prime, w_prime)
-        puts "INSERTION"
+        #puts "INSERTION"
         @weight_matrix[i, j]=w_prime
         @length_matrix[i, j]=l_prime
       end

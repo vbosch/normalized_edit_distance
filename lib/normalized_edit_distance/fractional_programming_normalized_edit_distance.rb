@@ -23,7 +23,6 @@ module NormalizedEditDistance
         @cost_function[:substitute]+=lambda_prime
         lambda_star = ued.calculate
         puts lambda_star
-        debugger
       end until lambda_star == lambda_prime
 
       lambda_star

@@ -1,6 +1,7 @@
 module NormalizedEditDistance
   class LineCostFunction
     def initialize
+      @costs = Hash.new
       @costs[:delete]=1.0
       @costs[:insert]=1.0
       @costs[:substitute]=2.0
