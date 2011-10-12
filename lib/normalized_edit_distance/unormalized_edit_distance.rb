@@ -9,8 +9,8 @@ module NormalizedEditDistance
     def initialize(x,y)
       @x = x
       @y = y
-      @weight_matrix = NMatrix.float(@y.length+1,@x.length+1)
-      @length_matrix = NMatrix.int(@y.length+1,@x.length+1)
+      @weight_matrix = NMatrix.float(@x.length+1,@y.length+1)
+      @length_matrix = NMatrix.int(@x.length+1,@y.length+1)
 
     end
 
@@ -24,15 +24,15 @@ module NormalizedEditDistance
           update_position(i, j)
         end
       end
-      @weight_matrix[@y.length,@x.length] / @length_matrix[@y.length,@x.length].to_f
+      @weight_matrix[@x.length,@y.length] / @length_matrix[@x.length,@y.length].to_f
 
     end
 
     def initialize_matrices
       @weight_matrix[0, 0]=0.0
       @length_matrix[0, 0]=0
-      (1..@x.length).each { |i| @weight_matrix[0, i]=@weight_matrix[0, i-1]+@cost_function.cost(@x[i-1],:lambda); @length_matrix[0, i]=@length_matrix[0, i-1]+1 }
-      (1..@y.length).each { |j| @weight_matrix[j, 0]=@weight_matrix[j-1, 0]+@cost_function.cost(:lambda, @y[j-1]); @length_matrix[j, 0]=@length_matrix[j-1, 0]+1 }
+      (1..@x.length).each { |i| @weight_matrix[i, 0]=@weight_matrix[i-1, 0]+@cost_function.cost(@x[i-1],:lambda); @length_matrix[i, 0]=@length_matrix[i-1, 0]+1 }
+      (1..@y.length).each { |j| @weight_matrix[0, j]=@weight_matrix[0, j-1]+@cost_function.cost(:lambda, @y[j-1]); @length_matrix[0, j]=@length_matrix[0, j-1]+1 }
     end
 
 

@@ -28,8 +28,8 @@ end
 
 Trollop::die :x_file, "hypotheses file name was not defined" unless opts[:x_file]
 Trollop::die :x_file, "Indicated hypothesesfile does not exist" unless File.exist?(opts[:x_file])
-#Trollop::die :y_file, "target file name was not defined" unless opts[:y_file]
-#Trollop::die :y_file, "Indicated target file does not exist" unless File.exist?(opts[:y_file])
+Trollop::die :y_file, "target file name was not defined" unless opts[:y_file]
+Trollop::die :y_file, "Indicated target file does not exist" unless File.exist?(opts[:y_file])
 
 Trollop::die :insertion_factor, "Insertion operation cost must be greater or equal to 0" unless opts[:insertion_factor] >= 0
 Trollop::die :deletion_factor, "Insertion operation cost must be greater or equal to 0" unless opts[:deletion_factor] >= 0
