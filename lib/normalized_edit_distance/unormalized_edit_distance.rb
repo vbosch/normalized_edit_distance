@@ -9,9 +9,16 @@ module NormalizedEditDistance
     def initialize(x,y)
       @x = x
       @y = y
+      @calculated = false
+      @path = Array.new
       @weight_matrix = NMatrix.float(@x.length+1,@y.length+1)
       @length_matrix = NMatrix.int(@x.length+1,@y.length+1)
 
+    end
+
+    def path
+      calculate_path if @path.empty?
+      @path
     end
 
     def calculate
@@ -24,6 +31,7 @@ module NormalizedEditDistance
           update_position(i, j)
         end
       end
+      @calculated = true
       @weight_matrix[@x.length,@y.length] / @length_matrix[@x.length,@y.length].to_f
 
     end
@@ -83,6 +91,45 @@ module NormalizedEditDistance
     def calculate_insertion_length(i, j)
       @length_matrix[i, j-1]+1
     end
+
+    def calculate_path
+      if is_calculated?
+        debugger
+        @path.clear
+        current_position = [@x.length,@y.length]
+        while not is_origin?(current_position)
+          operation = operation_backtrack(current_position)
+          update_path(current_position,operation)
+          current_position = update_path_position(current_position,operation)
+        end
+
+      end
+    end
+
+    def is_origin?(current_position)
+      current_position == [0,0]
+    end
+
+    def is_calculated?
+      @calculated
+    end
+
+    def operation_backtrack(position)
+      return :substitution if @weight_matrix[position[0],position[1]] == calculate_substitution_cost(position[0],position[1]) and position[0] > 0 and position[1] >0
+      return :deletion if @weight_matrix[position[0],position[1]] == calculate_deletion_cost(position[0],position[1]) and position[0]>0
+      :insertion
+    end
+
+    def update_path_position(current_position,operation)
+      return [current_position[0]-1,current_position[1]-1] if operation == :substitution
+      return [current_position[0]-1,current_position[1]] if operation == :deletion
+      [current_position[0],current_position[1]-1]  if operation == :insertion
+    end
+
+    def update_path(current_position,operation)
+      @path.insert(0,[operation,current_position[0]-1 >= 0 ? @x[current_position[0]-1] : [0,0],current_position[1]-1>=0 ? @y[current_position[1]-1] : [0,0]])
+    end
+
   end
 
 end

@@ -44,4 +44,6 @@ str_cost_func[:delete] = opts[:deletion_factor]
 
 fpned.cost_function = str_cost_func
 
-puts fpned.calculate
+ap fpned.calculate
+
+ap fpned.path

@@ -6,7 +6,7 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/normalized_edit_distance" afterPath="$PROJECT_DIR$/bin/normalized_edit_distance" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/text_line_normalized_edit_distance" afterPath="$PROJECT_DIR$/bin/text_line_normalized_edit_distance" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/normalized_edit_distance/fractional_programming_normalized_edit_distance.rb" afterPath="$PROJECT_DIR$/lib/normalized_edit_distance/fractional_programming_normalized_edit_distance.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/normalized_edit_distance/locally_normalized_edit_distance.rb" afterPath="$PROJECT_DIR$/lib/normalized_edit_distance/locally_normalized_edit_distance.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/normalized_edit_distance/line_cost_function.rb" afterPath="$PROJECT_DIR$/lib/normalized_edit_distance/line_cost_function.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/normalized_edit_distance/unormalized_edit_distance.rb" afterPath="$PROJECT_DIR$/lib/normalized_edit_distance/unormalized_edit_distance.rb" />
     </list>
     <ignored path="normalized_edit_distance.iws" />
@@ -66,10 +66,19 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="line_cost_function.rb" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="line_cost_function.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lib/normalized_edit_distance/line_cost_function.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="6" column="22" selection-start="172" selection-end="172" vertical-scroll-proportion="0.1024">
+            <state line="10" column="21" selection-start="211" selection-end="211" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="normalized_edit_distance" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/bin/normalized_edit_distance">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="37" column="0" selection-start="1698" selection-end="1698" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -78,7 +87,43 @@
       <file leaf-file-name="unormalized_edit_distance.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lib/normalized_edit_distance/unormalized_edit_distance.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="25" column="9" selection-start="523" selection-end="523" vertical-scroll-proportion="0.0">
+            <state line="129" column="154" selection-start="3982" selection-end="3982" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="normalized_edit_distance.rb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lib/normalized_edit_distance.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="text_line_normalized_edit_distance" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/bin/text_line_normalized_edit_distance">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="50" column="0" selection-start="2345" selection-end="2345" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="fractional_programming_normalized_edit_distance.rb" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/lib/normalized_edit_distance/fractional_programming_normalized_edit_distance.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="42" column="7" selection-start="933" selection-end="933" vertical-scroll-proportion="0.6826446">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="line_description_file.rb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lib/normalized_edit_distance/line_description_file.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="12" column="6" selection-start="224" selection-end="355" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -87,16 +132,7 @@
       <file leaf-file-name="locally_normalized_edit_distance.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lib/normalized_edit_distance/locally_normalized_edit_distance.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="8" column="69" selection-start="251" selection-end="251" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="fractional_programming_normalized_edit_distance.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lib/normalized_edit_distance/fractional_programming_normalized_edit_distance.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="19" column="33" selection-start="387" selection-end="387" vertical-scroll-proportion="0.0">
+            <state line="12" column="0" selection-start="273" selection-end="273" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -124,11 +160,11 @@
         <option value="$PROJECT_DIR$/bin/text_line_normalized_edit_distance.rb" />
         <option value="$PROJECT_DIR$/lib/normalized_edit_distance/line_description_file.rb" />
         <option value="$PROJECT_DIR$/lib/normalized_edit_distance/line_cost_function.rb" />
-        <option value="$PROJECT_DIR$/bin/text_line_normalized_edit_distance" />
-        <option value="$PROJECT_DIR$/lib/normalized_edit_distance/locally_normalized_edit_distance.rb" />
-        <option value="$PROJECT_DIR$/lib/normalized_edit_distance/fractional_programming_normalized_edit_distance.rb" />
         <option value="$PROJECT_DIR$/bin/normalized_edit_distance" />
+        <option value="$PROJECT_DIR$/lib/normalized_edit_distance/locally_normalized_edit_distance.rb" />
+        <option value="$PROJECT_DIR$/bin/text_line_normalized_edit_distance" />
         <option value="$PROJECT_DIR$/lib/normalized_edit_distance/unormalized_edit_distance.rb" />
+        <option value="$PROJECT_DIR$/lib/normalized_edit_distance/fractional_programming_normalized_edit_distance.rb" />
       </list>
     </option>
   </component>
@@ -486,7 +522,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="67" y="22" width="1213" height="746" extended-state="6" />
+    <frame x="67" y="22" width="1213" height="746" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -560,16 +596,6 @@
         <state line="11" column="7" selection-start="216" selection-end="216" vertical-scroll-proportion="0.45128205" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/normalized_edit_distance.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/normalized_edit_distance/line_description_file.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="0" selection-start="364" selection-end="364" vertical-scroll-proportion="0.45211932" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/lib/normalized_edit_distance/string_cost_function.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="5" column="16" selection-start="93" selection-end="94" vertical-scroll-proportion="0.0">
@@ -577,44 +603,56 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/bin/text_line_normalized_edit_distance">
+    <entry file="file://$PROJECT_DIR$/lib/normalized_edit_distance/line_cost_function.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="31" column="0" selection-start="1406" selection-end="1406" vertical-scroll-proportion="0.3584">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/normalized_edit_distance/fractional_programming_normalized_edit_distance.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="33" selection-start="387" selection-end="387" vertical-scroll-proportion="0.0">
+        <state line="10" column="21" selection-start="211" selection-end="211" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/normalized_edit_distance/locally_normalized_edit_distance.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="69" selection-start="251" selection-end="251" vertical-scroll-proportion="0.0">
+        <state line="12" column="0" selection-start="273" selection-end="273" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/lib/normalized_edit_distance.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/bin/normalized_edit_distance">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="114" selection-start="1021" selection-end="1021" vertical-scroll-proportion="0.5322314">
+        <state line="37" column="0" selection-start="1698" selection-end="1698" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/normalized_edit_distance/line_description_file.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="12" column="6" selection-start="224" selection-end="355" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bin/text_line_normalized_edit_distance">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="50" column="0" selection-start="2345" selection-end="2345" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/normalized_edit_distance/unormalized_edit_distance.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="9" selection-start="523" selection-end="523" vertical-scroll-proportion="0.0">
+        <state line="129" column="154" selection-start="3982" selection-end="3982" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/normalized_edit_distance/line_cost_function.rb">
+    <entry file="file://$PROJECT_DIR$/lib/normalized_edit_distance/fractional_programming_normalized_edit_distance.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="22" selection-start="172" selection-end="172" vertical-scroll-proportion="0.1024">
+        <state line="42" column="7" selection-start="933" selection-end="933" vertical-scroll-proportion="0.6826446">
           <folding />
         </state>
       </provider>

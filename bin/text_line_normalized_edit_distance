@@ -19,9 +19,9 @@ EOS
 
 opt :x_file, "hypothesis file with detected lines with which to perform the normalized edit distance", :type => :string
 opt :y_file, "original file target line file to perform normalized edit distance ", :type => :string
-opt :insertion_factor, "Insertion cost to use in the normalized edit distance", :type => :int, :default => 3
-opt :deletion_factor, "Deletion cost to use in the normalized edit distance", :type => :int, :default => 2
-opt :substitution_factor, "Substitution cost to use in the normalized edit distance", :type => :int, :default => 2
+opt :insertion_factor, "Insertion cost to use in the normalized edit distance", :type => :float, :default => 1.0
+opt :deletion_factor, "Deletion cost to use in the normalized edit distance", :type => :float, :default => 1.0
+opt :substitution_factor, "Substitution cost to use in the normalized edit distance", :type => :float, :default => 1.0
 end
 
 #Defining special considerations for the entry data
@@ -35,7 +35,6 @@ Trollop::die :insertion_factor, "Insertion operation cost must be greater or equ
 Trollop::die :deletion_factor, "Insertion operation cost must be greater or equal to 0" unless opts[:deletion_factor] >= 0
 Trollop::die :substitution_factor, "Insertion operation cost must be greater or equal to 0" unless opts[:substitution_factor] >= 0
 
-ap opts
 
 hypothesis_file = NormalizedEditDistance::LineDescriptionFile.new(opts[:x_file])
 hypothesis_file.read
@@ -49,8 +48,10 @@ ln_cost_func = NormalizedEditDistance::LineCostFunction.new
 
 ln_cost_func[:insert] = opts[:insertion_factor]
 ln_cost_func[:delete] = opts[:deletion_factor]
-ln_cost_func[:delete] = opts[:deletion_factor]
+ln_cost_func[:substitute] = opts[:deletion_factor]
 
 fpned.cost_function = ln_cost_func
 
-puts fpned.calculate
+ap fpned.calculate
+
+fpned.path_to_file("output.txt")
