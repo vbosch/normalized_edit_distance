@@ -32,16 +32,9 @@ module NormalizedEditDistance
     end
 
     def path_to_file(file_name)
-      File.open(file_name, "w") do |file|
-        @ued.path.each do |operation|
-          file.puts operation_to_s(operation)
-        end
-      end
+        @ued.path_to_file(file_name)
     end
 
-    def operation_to_s(operation)
-      "#{operation[0]} #{operation[1][0]} #{operation[1][1]} #{operation[2][0]} #{operation[2][1]}"
-    end
 
   end
 

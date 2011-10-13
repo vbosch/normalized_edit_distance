@@ -21,7 +21,7 @@ opt :x_file, "hypothesis file with detected lines with which to perform the norm
 opt :y_file, "original file target line file to perform normalized edit distance ", :type => :string
 opt :insertion_factor, "Insertion cost to use in the normalized edit distance", :type => :float, :default => 1.0
 opt :deletion_factor, "Deletion cost to use in the normalized edit distance", :type => :float, :default => 1.0
-opt :substitution_factor, "Substitution cost to use in the normalized edit distance", :type => :float, :default => 1.0
+opt :substitution_factor, "Substitution cost to use in the normalized edit distance", :type => :float, :default => 2.0
 end
 
 #Defining special considerations for the entry data
@@ -42,7 +42,7 @@ hypothesis_file.read
 target_file = NormalizedEditDistance::LineDescriptionFile.new(opts[:y_file])
 target_file.read
 
-fpned = NormalizedEditDistance::FPNED.new(hypothesis_file.line_limits,target_file.line_limits)
+ued = NormalizedEditDistance::UED.new(hypothesis_file.line_limits,target_file.line_limits)
 
 ln_cost_func = NormalizedEditDistance::LineCostFunction.new
 
@@ -50,8 +50,8 @@ ln_cost_func[:insert] = opts[:insertion_factor]
 ln_cost_func[:delete] = opts[:deletion_factor]
 ln_cost_func[:substitute] = opts[:deletion_factor]
 
-fpned.cost_function = ln_cost_func
+ued.cost_function = ln_cost_func
 
-ap fpned.calculate
+ap ued.calculate
 
-fpned.path_to_file("output.txt")
+ued.path_to_file("output.txt")

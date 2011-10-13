@@ -94,7 +94,6 @@ module NormalizedEditDistance
 
     def calculate_path
       if is_calculated?
-        debugger
         @path.clear
         current_position = [@x.length,@y.length]
         while not is_origin?(current_position)
@@ -128,6 +127,18 @@ module NormalizedEditDistance
 
     def update_path(current_position,operation)
       @path.insert(0,[operation,current_position[0]-1 >= 0 ? @x[current_position[0]-1] : [0,0],current_position[1]-1>=0 ? @y[current_position[1]-1] : [0,0]])
+    end
+
+    def path_to_file(file_name)
+      File.open(file_name, "w") do |file|
+        path.each do |operation|
+          file.puts operation_to_s(operation)
+        end
+      end
+    end
+
+    def operation_to_s(operation)
+      "#{operation[0]} #{operation[1][0]} #{operation[1][1]} #{operation[2][0]} #{operation[2][1]}"
     end
 
   end
