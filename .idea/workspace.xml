@@ -2,10 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d896b056-6a5f-4e6e-bd4e-3bad7d792e21" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/normalized_edit_distance/frontier.rb" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/lib/normalized_edit_distance/line_cost_function.rb" afterPath="$PROJECT_DIR$/lib/normalized_edit_distance/line.rb" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/lib/normalized_edit_distance/string_cost_function.rb" afterPath="$PROJECT_DIR$/lib/normalized_edit_distance/char.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/normalized_edit_distance" afterPath="$PROJECT_DIR$/bin/normalized_edit_distance" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/text_line_normalized_edit_distance" afterPath="$PROJECT_DIR$/bin/text_line_normalized_edit_distance" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/normalized_edit_distance/fractional_programming_normalized_edit_distance.rb" afterPath="$PROJECT_DIR$/lib/normalized_edit_distance/fractional_programming_normalized_edit_distance.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/normalized_edit_distance/line_cost_function.rb" afterPath="$PROJECT_DIR$/lib/normalized_edit_distance/line_cost_function.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/normalized_edit_distance/line_description_file.rb" afterPath="$PROJECT_DIR$/lib/normalized_edit_distance/line_description_file.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/normalized_edit_distance/unormalized_edit_distance.rb" afterPath="$PROJECT_DIR$/lib/normalized_edit_distance/unormalized_edit_distance.rb" />
     </list>
     <ignored path="normalized_edit_distance.iws" />
@@ -65,28 +68,55 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
+      <file leaf-file-name="frontier.rb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lib/normalized_edit_distance/frontier.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="3" column="16" selection-start="62" selection-end="70" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="line.rb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lib/normalized_edit_distance/line.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="7" column="7" selection-start="175" selection-end="175" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="char.rb" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/lib/normalized_edit_distance/char.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="9" column="29" selection-start="177" selection-end="177" vertical-scroll-proportion="0.22605966">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="unormalized_edit_distance.rb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lib/normalized_edit_distance/unormalized_edit_distance.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="137" column="7" selection-start="4194" selection-end="4194" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="text_line_normalized_edit_distance" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/bin/text_line_normalized_edit_distance">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="23" column="116" selection-start="1099" selection-end="1099" vertical-scroll-proportion="0.0">
+            <state line="52" column="38" selection-start="2492" selection-end="2492" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="line_cost_function.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lib/normalized_edit_distance/line_cost_function.rb">
+      <file leaf-file-name="line_description_file.rb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lib/normalized_edit_distance/line_description_file.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="6" column="27" selection-start="177" selection-end="177" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="unormalized_edit_distance.rb" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/lib/normalized_edit_distance/unormalized_edit_distance.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="95" column="23" selection-start="2617" selection-end="2617" vertical-scroll-proportion="-0.41614908">
+            <state line="25" column="36" selection-start="601" selection-end="601" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -106,19 +136,22 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/Rakefile" />
         <option value="$PROJECT_DIR$/lib/FPNED/fractional_programming_normalized_edit_distance.rb" />
         <option value="$PROJECT_DIR$/lib/LNED/locally_normalized_edit_distance.rb" />
         <option value="$PROJECT_DIR$/lib/StringCostFunction/StrincCostFunction.rb" />
         <option value="$PROJECT_DIR$/lib/normalized_edit_distance/StrincCostFunction.rb" />
         <option value="$PROJECT_DIR$/bin/text_line_normalized_edit_distance.rb" />
-        <option value="$PROJECT_DIR$/lib/normalized_edit_distance/line_description_file.rb" />
         <option value="$PROJECT_DIR$/bin/normalized_edit_distance" />
         <option value="$PROJECT_DIR$/lib/normalized_edit_distance/locally_normalized_edit_distance.rb" />
         <option value="$PROJECT_DIR$/lib/normalized_edit_distance/fractional_programming_normalized_edit_distance.rb" />
-        <option value="$PROJECT_DIR$/bin/text_line_normalized_edit_distance" />
         <option value="$PROJECT_DIR$/lib/normalized_edit_distance/line_cost_function.rb" />
+        <option value="$PROJECT_DIR$/lib/normalized_edit_distance/line_description_file.rb" />
+        <option value="$PROJECT_DIR$/bin/text_line_normalized_edit_distance" />
+        <option value="$PROJECT_DIR$/lib/normalized_edit_distance/frontier_cost_function.rb" />
         <option value="$PROJECT_DIR$/lib/normalized_edit_distance/unormalized_edit_distance.rb" />
+        <option value="$PROJECT_DIR$/lib/normalized_edit_distance/frontier.rb" />
+        <option value="$PROJECT_DIR$/lib/normalized_edit_distance/line.rb" />
+        <option value="$PROJECT_DIR$/lib/normalized_edit_distance/char.rb" />
       </list>
     </option>
   </component>
@@ -171,7 +204,8 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Favorites" />
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -238,8 +272,7 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
+      <pane id="Favorites" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -247,6 +280,7 @@
     <property name="project.structure.last.edited" value="SDKs" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="options.splitter.main.proportions" value="0.3" />
+    <property name="recentsLimit" value="5" />
     <property name="options.lastSelected" value="preferences.keymap" />
     <property name="MemberChooser.sorted" value="false" />
     <property name="RakeTaksPopup.undocumentedIncluded" value="false" />
@@ -256,10 +290,30 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="MemberChooser.showClasses" value="true" />
     <property name="GoToClass.includeLibraries" value="false" />
-    <property name="options.splitter.details.proportions" value="0.2" />
     <property name="options.searchVisible" value="true" />
+    <property name="options.splitter.details.proportions" value="0.2" />
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Ruby.Rakefile">
+    <configuration default="false" name="Rakefile" type="RubyRunConfigurationType" factoryName="Ruby" temporary="true">
+      <module name="normalized_edit_distance" />
+      <RUBY_RUN_CONFIG NAME="RUBY_ARGS" VALUE="-e $stdout.sync=true;$stderr.sync=true;load($0=ARGV.shift)" />
+      <RUBY_RUN_CONFIG NAME="WORK DIR" VALUE="$PROJECT_DIR$" />
+      <RUBY_RUN_CONFIG NAME="SHOULD_USE_SDK" VALUE="false" />
+      <RUBY_RUN_CONFIG NAME="ALTERN_SDK_NAME" VALUE="" />
+      <RUBY_RUN_CONFIG NAME="myPassParentEnvs" VALUE="true" />
+      <envs />
+      <EXTENSION ID="BundlerRunConfigurationExtension" bundleExecEnabled="false" />
+      <EXTENSION ID="RubyCoverageRunConfigurationExtension" enabled="false" track_test_folders="true" runner="rcov">
+        <COVERAGE_PATTERN ENABLED="true">
+          <PATTERN REGEXPS="/.rvm/" INCLUDED="false" />
+        </COVERAGE_PATTERN>
+      </EXTENSION>
+      <RUBY_RUN_CONFIG NAME="SCRIPT_PATH" VALUE="$PROJECT_DIR$/Rakefile" />
+      <RUBY_RUN_CONFIG NAME="SCRIPT_ARGS" VALUE="" />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method />
+    </configuration>
     <configuration default="true" type="RSpecRunConfigurationType" factoryName="RSpec">
       <predefined_log_file id="RUBY_RSPEC" enabled="true" />
       <module name="" />
@@ -460,7 +514,9 @@
         <option name="Maven.BeforeRunTask" enabled="false" />
       </method>
     </configuration>
-    <list size="0" />
+    <list size="1">
+      <item index="0" class="java.lang.String" itemvalue="Ruby.Rakefile" />
+    </list>
     <configuration name="&lt;template&gt;" type="WebApp" default="true" selected="false">
       <Host>localhost</Host>
       <Port>5050</Port>
@@ -481,6 +537,7 @@
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32944608" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Leiningen" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -489,13 +546,12 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32761577" sideWeight="0.6705539" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32761577" sideWeight="0.6705539" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32944608" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32944608" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32798833" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="6" side_tool="false" content_ui="combo" />
@@ -545,18 +601,6 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Rakefile">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="7" selection-start="216" selection-end="216" vertical-scroll-proportion="0.45128205" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/normalized_edit_distance/string_cost_function.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="16" selection-start="93" selection-end="94" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/bin/normalized_edit_distance">
       <provider selected="true" editor-type-id="text-editor">
         <state line="37" column="0" selection-start="1698" selection-end="1698" vertical-scroll-proportion="0.9785124">
@@ -578,13 +622,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/normalized_edit_distance/line_description_file.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="6" selection-start="224" selection-end="355" vertical-scroll-proportion="0.3072">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/lib/normalized_edit_distance/locally_normalized_edit_distance.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="12" column="0" selection-start="273" selection-end="273" vertical-scroll-proportion="0.3072">
@@ -592,23 +629,51 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/bin/text_line_normalized_edit_distance">
+    <entry file="file://$PROJECT_DIR$/Rakefile">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="116" selection-start="1099" selection-end="1099" vertical-scroll-proportion="0.0">
+        <state line="10" column="7" selection-start="165" selection-end="165" vertical-scroll-proportion="0.2435312">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/normalized_edit_distance/line_cost_function.rb">
+    <entry file="file://$PROJECT_DIR$/lib/normalized_edit_distance/line_description_file.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="27" selection-start="177" selection-end="177" vertical-scroll-proportion="0.0">
+        <state line="25" column="36" selection-start="601" selection-end="601" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bin/text_line_normalized_edit_distance">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="52" column="38" selection-start="2492" selection-end="2492" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/normalized_edit_distance/unormalized_edit_distance.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="95" column="23" selection-start="2617" selection-end="2617" vertical-scroll-proportion="-0.41614908">
+        <state line="137" column="7" selection-start="4194" selection-end="4194" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/normalized_edit_distance/frontier.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="3" column="16" selection-start="62" selection-end="70" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/normalized_edit_distance/line.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="7" column="7" selection-start="175" selection-end="175" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/normalized_edit_distance/char.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="29" selection-start="177" selection-end="177" vertical-scroll-proportion="0.22605966">
           <folding />
         </state>
       </provider>

@@ -42,16 +42,16 @@ hypothesis_file.read
 target_file = NormalizedEditDistance::LineDescriptionFile.new(opts[:y_file])
 target_file.read
 
-ued = NormalizedEditDistance::UED.new(hypothesis_file.line_limits,target_file.line_limits)
 
-ln_cost_func = NormalizedEditDistance::LineCostFunction.new
+ued = NormalizedEditDistance::UED.new(hypothesis_file.frontiers,target_file.frontiers)
 
-ln_cost_func[:insert] = opts[:insertion_factor]
-ln_cost_func[:delete] = opts[:deletion_factor]
-ln_cost_func[:substitute] = opts[:deletion_factor]
+frontier_cost_func = NormalizedEditDistance::Frontier.new(hypothesis_file.frontiers,target_file.frontiers)
+frontier_cost_func[:insert] = opts[:insertion_factor]
+frontier_cost_func[:delete] = opts[:deletion_factor]
+frontier_cost_func[:substitute] = opts[:deletion_factor]
 
-ued.cost_function = ln_cost_func
+ued.cost_function = frontier_cost_func
 
 ap ued.calculate
 
-ued.path_to_file("output.txt")
+#ued.path_to_file("output.txt")

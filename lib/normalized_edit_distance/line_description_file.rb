@@ -2,11 +2,12 @@
 module NormalizedEditDistance
   class LineDescriptionFile
 
-    attr_reader :line_limits
+    attr_reader :lines ,:frontiers
 
     def initialize(file_name)
       @file_name= file_name
-      @line_limits = Array.new
+      @lines = Array.new
+      @frontiers = Array.new
     end
 
     def read
@@ -20,7 +21,9 @@ module NormalizedEditDistance
     def process_line(line)
       values = line.split
       if values[0]=="Line"
-        line_limits.push values[2..3].map{|val| val.to_i}
+        @lines.push values[2..3].map{|val| val.to_i}
+        @frontiers.push lines.last[0]
+        @frontiers.push lines.last[1]
       end
     end
 

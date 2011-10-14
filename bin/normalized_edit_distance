@@ -36,7 +36,7 @@ ap opts
 
 fpned = NormalizedEditDistance::FPNED.new(opts[:x_string],opts[:y_string])
 
-str_cost_func = NormalizedEditDistance::StrincCostFunction.new
+str_cost_func = NormalizedEditDistance::Char.new
 
 str_cost_func[:insert] = opts[:insertion_factor]
 str_cost_func[:delete] = opts[:deletion_factor]

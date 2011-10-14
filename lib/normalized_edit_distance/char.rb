@@ -1,6 +1,6 @@
 module NormalizedEditDistance
 
-  class StrincCostFunction
+  class Char
     def initialize
 
       @costs = Hash.new

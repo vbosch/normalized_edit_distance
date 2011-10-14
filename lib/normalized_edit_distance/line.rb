@@ -1,5 +1,5 @@
 module NormalizedEditDistance
-  class LineCostFunction
+  class Line
     def initialize
       @costs = Hash.new
       @costs[:delete]=1.0
