@@ -31,7 +31,6 @@ module NormalizedEditDistance
           update_position(i, j)
         end
       end
-      debugger
       @calculated = true
       @weight_matrix[@x.length,@y.length] / @length_matrix[@x.length,@y.length].to_f
 
@@ -122,7 +121,7 @@ module NormalizedEditDistance
     end
 
     def update_path(current_position,operation)
-      @path.insert(0,[operation,current_position[0]-1 >= 0 ? @x[current_position[0]-1] : [0,0],current_position[1]-1>=0 ? @y[current_position[1]-1] : [0,0]])
+      @path.insert(0,[operation,current_position[0]-1 >= 0 ? @x[current_position[0]-1] : :epsilon ,current_position[1]-1>=0 ? @y[current_position[1]-1] : :epsilon])
     end
 
     def path_to_file(file_name)
@@ -134,7 +133,7 @@ module NormalizedEditDistance
     end
 
     def operation_to_s(operation)
-      "#{operation[0]} #{operation[1][0]} #{operation[1][1]} #{operation[2][0]} #{operation[2][1]}"
+      "#{operation[0]} #{type_helper.format_type(operation[1])} #{type_helper.format_type(operation[2])}"
     end
 
   end

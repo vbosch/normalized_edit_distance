@@ -23,6 +23,11 @@ module NormalizedEditDistance
 
     end
 
+    def format_type(char)
+      return ' ' if frontier == :epsilon
+      char
+    end
+
     def insertion?(from,to)
       from == :lambda and to != :lambda
     end

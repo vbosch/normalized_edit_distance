@@ -54,4 +54,4 @@ ued.type_helper = frontier_helper
 
 ap ued.calculate
 
-#ued.path_to_file("output.txt")
+ued.path_to_file("output.txt")

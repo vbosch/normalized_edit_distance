@@ -22,7 +22,8 @@ module NormalizedEditDistance
       values = line.split
       if values[0]=="Line"
         @lines.push values[2..3].map{|val| val.to_i}
-        @frontiers.push lines.last[0]
+        #TODO: Must we collapse when a frontier is the same as the last ?
+        @frontiers.push lines.last[0] if lines.last[0] != @frontiers.last
         @frontiers.push lines.last[1]
       end
     end

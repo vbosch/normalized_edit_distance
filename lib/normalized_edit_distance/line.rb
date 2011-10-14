@@ -18,6 +18,11 @@ module NormalizedEditDistance
 
     end
 
+    def format_type(line)
+      return "0 0" if frontier == :epsilon
+      "#{line[0]} #{line[1]}"
+    end
+
     def insertion?(from,to)
       from == :lambda and to != :lambda
     end
