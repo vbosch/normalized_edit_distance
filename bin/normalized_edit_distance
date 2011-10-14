@@ -36,13 +36,13 @@ ap opts
 
 fpned = NormalizedEditDistance::FPNED.new(opts[:x_string],opts[:y_string])
 
-str_cost_func = NormalizedEditDistance::Char.new
+char_helper = NormalizedEditDistance::Char.new
 
-str_cost_func[:insert] = opts[:insertion_factor]
-str_cost_func[:delete] = opts[:deletion_factor]
-str_cost_func[:delete] = opts[:deletion_factor]
+char_helper[:insert] = opts[:insertion_factor]
+char_helper[:delete] = opts[:deletion_factor]
+char_helper[:delete] = opts[:deletion_factor]
 
-fpned.cost_function = str_cost_func
+fpned.type_helper = char_helper
 
 ap fpned.calculate
 

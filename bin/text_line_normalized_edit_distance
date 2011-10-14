@@ -45,12 +45,12 @@ target_file.read
 
 ued = NormalizedEditDistance::UED.new(hypothesis_file.frontiers,target_file.frontiers)
 
-frontier_cost_func = NormalizedEditDistance::Frontier.new(hypothesis_file.frontiers,target_file.frontiers)
-frontier_cost_func[:insert] = opts[:insertion_factor]
-frontier_cost_func[:delete] = opts[:deletion_factor]
-frontier_cost_func[:substitute] = opts[:deletion_factor]
+frontier_helper = NormalizedEditDistance::Frontier.new(hypothesis_file.frontiers,target_file.frontiers)
+frontier_helper[:insert] = opts[:insertion_factor]
+frontier_helper[:delete] = opts[:deletion_factor]
+frontier_helper[:substitute] = opts[:deletion_factor]
 
-ued.cost_function = frontier_cost_func
+ued.type_helper = frontier_helper
 
 ap ued.calculate
 

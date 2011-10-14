@@ -4,7 +4,7 @@ module NormalizedEditDistance
   require 'ruby-debug'
   class UED
 
-    attr_accessor :cost_function
+    attr_accessor :type_helper
 
     def initialize(x,y)
       @x = x
@@ -40,8 +40,8 @@ module NormalizedEditDistance
     def initialize_matrices
       @weight_matrix[0, 0]=0.0
       @length_matrix[0, 0]=0
-      (1..@x.length).each { |i| @weight_matrix[i, 0]=@weight_matrix[i-1, 0]+@cost_function.cost(@x[i-1],:lambda); @length_matrix[i, 0]=@length_matrix[i-1, 0]+1 }
-      (1..@y.length).each { |j| @weight_matrix[0, j]=@weight_matrix[0, j-1]+@cost_function.cost(:lambda, @y[j-1]); @length_matrix[0, j]=@length_matrix[0, j-1]+1 }
+      (1..@x.length).each { |i| @weight_matrix[i, 0]=@weight_matrix[i-1, 0]+@type_helper.cost(@x[i-1],:lambda); @length_matrix[i, 0]=@length_matrix[i-1, 0]+1 }
+      (1..@y.length).each { |j| @weight_matrix[0, j]=@weight_matrix[0, j-1]+@type_helper.cost(:lambda, @y[j-1]); @length_matrix[0, j]=@length_matrix[0, j-1]+1 }
     end
 
 
@@ -65,15 +65,15 @@ module NormalizedEditDistance
     end
 
     def calculate_substitution_cost(i,j)
-      @weight_matrix[i-1, j-1]+@cost_function.cost(@x[i-1], @y[j-1])
+      @weight_matrix[i-1, j-1]+@type_helper.cost(@x[i-1], @y[j-1])
     end
 
     def calculate_deletion_cost(i,j)
-      @weight_matrix[i-1,j]+@cost_function.cost(@x[i-1],:lambda)
+      @weight_matrix[i-1,j]+@type_helper.cost(@x[i-1],:lambda)
     end
 
     def calculate_insertion_cost(i, j)
-      @weight_matrix[i, j-1]+@cost_function.cost(:lambda, @y[j-1])
+      @weight_matrix[i, j-1]+@type_helper.cost(:lambda, @y[j-1])
     end
 
     def calculate_substitution_length(i,j)
