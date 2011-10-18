@@ -22,6 +22,7 @@ opt :y_file, "original file target line file to perform normalized edit distance
 opt :insertion_factor, "Insertion cost to use in the normalized edit distance", :type => :float, :default => 1.0
 opt :deletion_factor, "Deletion cost to use in the normalized edit distance", :type => :float, :default => 1.0
 opt :substitution_factor, "Substitution cost to use in the normalized edit distance", :type => :float, :default => 2.0
+opt :cost_mode, "Cost value to return as output. Modes: all,substitution" , :type => :string, :default =>"all"
 end
 
 #Defining special considerations for the entry data
@@ -34,7 +35,7 @@ Trollop::die :y_file, "Indicated target file does not exist" unless File.exist?(
 Trollop::die :insertion_factor, "Insertion operation cost must be greater or equal to 0" unless opts[:insertion_factor] >= 0
 Trollop::die :deletion_factor, "Insertion operation cost must be greater or equal to 0" unless opts[:deletion_factor] >= 0
 Trollop::die :substitution_factor, "Insertion operation cost must be greater or equal to 0" unless opts[:substitution_factor] >= 0
-
+Trollop::die :cost_mode, "Uncorrect cost mode selected" unless ["all","substitution"].include?(opts[:cost_mode])
 
 hypothesis_file = NormalizedEditDistance::LineDescriptionFile.new(opts[:x_file])
 hypothesis_file.read
@@ -52,6 +53,10 @@ frontier_helper[:substitute] = opts[:deletion_factor]
 
 ued.type_helper = frontier_helper
 
-ap ued.calculate
+res = ued.calculate
+
+ap res if opts[:cost_mode] == "all"
+
+ap ued.substitution_cost_only if opts[:cost_mode] == "substitution"
 
 ued.path_to_file("output.txt")
