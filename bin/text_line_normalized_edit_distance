@@ -63,4 +63,4 @@ end
 
 ops = ued.operations
 
-puts "Cost mode: #{opts[:cost_mode]} Accuracy: #{cost} (S:#{ops[:substitution]} I:#{ops[:insertion]} D:#{ops[:deletion]})"
+puts "Cost mode: #{opts[:cost_mode]} Accuracy: #{cost} (S: #{ops[:substitution]} I: #{ops[:insertion]} D: #{ops[:deletion]})"
