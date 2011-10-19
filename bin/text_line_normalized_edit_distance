@@ -53,10 +53,14 @@ frontier_helper[:substitute] = opts[:deletion_factor]
 
 ued.type_helper = frontier_helper
 
-res = ued.calculate
-
-ap res if opts[:cost_mode] == "all"
-
-ap ued.substitution_cost_only if opts[:cost_mode] == "substitution"
+cost = ued.calculate
 
 ued.path_to_file("output.txt")
+
+if opts[:cost_mode] == "substitution"
+  cost= ued.substitution_cost_only
+end
+
+ops = ued.operations
+
+puts "Cost mode: #{opts[:cost_mode]} Accuracy: #{cost} (S:#{ops[:substitution]} I:#{ops[:insertion]} D:#{ops[:deletion]})"

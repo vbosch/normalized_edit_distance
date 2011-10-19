@@ -4,7 +4,7 @@ module NormalizedEditDistance
   require 'ruby-debug'
   class UED
 
-    attr_accessor :type_helper
+    attr_accessor :type_helper, :operations
 
     def initialize(x,y)
       @x = x
@@ -13,6 +13,7 @@ module NormalizedEditDistance
       @path = Array.new
       @weight_matrix = NMatrix.float(@x.length+1,@y.length+1)
       @length_matrix = NMatrix.int(@x.length+1,@y.length+1)
+      @operations = {:substitution => 0, :insertion => 0, :deletion => 0}
 
     end
 
@@ -89,10 +90,12 @@ module NormalizedEditDistance
 
     def calculate_path
       if is_calculated?
+        @operations = {:substitution => 0, :insertion => 0, :deletion => 0}
         @path.clear
         current_position = [@x.length,@y.length]
         while not is_origin?(current_position)
           operation = operation_backtrack(current_position)
+          @operations[operation]+=1
           update_path(current_position,operation)
           current_position = update_path_position(current_position,operation)
         end
@@ -104,10 +107,12 @@ module NormalizedEditDistance
       cost = 0.0
       ops = 0.0
       if is_calculated?
+        @operations = {:substitution => 0, :insertion => 0, :deletion => 0}
         current_position = [@x.length,@y.length]
         while not is_origin?(current_position)
           operation = operation_backtrack(current_position)
           if operation == :substitution
+            @operations[operation]+=1
             cost+= @type_helper.cost(@x[current_position[0]-1], @y[current_position[0]-1])
             ops += 1.0
           end
