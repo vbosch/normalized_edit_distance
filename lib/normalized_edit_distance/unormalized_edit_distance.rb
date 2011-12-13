@@ -22,6 +22,25 @@ module NormalizedEditDistance
       @path
     end
 
+    def standard_normalized_cost
+      calculate unless @calculated
+      @weight_matrix[@x.length,@y.length] / @length_matrix[@x.length,@y.length].to_f
+    end
+
+
+
+    def ponderated_normalized_cost
+      calculate unless @calculated
+      @weight_matrix[@x.length,@y.length]/ponderated_length
+
+    end
+
+    def ponderated_length
+      calculate_path
+      @operations[:substitution]*@type_helper[:substitute]+@operations[:insertion]*@type_helper[:insert]+@operations[:deletion]*@type_helper[:delete]
+    end
+
+
     def calculate
 
       initialize_matrices
@@ -33,7 +52,6 @@ module NormalizedEditDistance
         end
       end
       @calculated = true
-      @weight_matrix[@x.length,@y.length] / @length_matrix[@x.length,@y.length].to_f
 
     end
 

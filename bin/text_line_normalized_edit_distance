@@ -53,7 +53,7 @@ frontier_helper[:substitute] = opts[:deletion_factor]
 
 ued.type_helper = frontier_helper
 
-cost = ued.calculate
+cost = ued.ponderated_normalized_cost
 
 ued.path_to_file("output.txt")
 
