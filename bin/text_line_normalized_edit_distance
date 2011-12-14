@@ -49,7 +49,7 @@ ued = NormalizedEditDistance::UED.new(hypothesis_file.frontiers,target_file.fron
 frontier_helper = NormalizedEditDistance::Frontier.new(hypothesis_file.frontiers,target_file.frontiers)
 frontier_helper[:insert] = opts[:insertion_factor]
 frontier_helper[:delete] = opts[:deletion_factor]
-frontier_helper[:substitute] = opts[:deletion_factor]
+frontier_helper[:substitute] = opts[:substitution_factor]
 
 ued.type_helper = frontier_helper
 
