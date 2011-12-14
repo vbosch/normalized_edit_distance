@@ -23,6 +23,7 @@ opt :insertion_factor, "Insertion cost to use in the normalized edit distance", 
 opt :deletion_factor, "Deletion cost to use in the normalized edit distance", :type => :float, :default => 1.0
 opt :substitution_factor, "Substitution cost to use in the normalized edit distance", :type => :float, :default => 2.0
 opt :cost_mode, "Cost value to return as output. Modes: all,substitution" , :type => :string, :default =>"all"
+opt :frontiers, "Frontiers to be considered for cost calculation", :type => :string, :default =>"last"
 end
 
 #Defining special considerations for the entry data
@@ -36,13 +37,13 @@ Trollop::die :insertion_factor, "Insertion operation cost must be greater or equ
 Trollop::die :deletion_factor, "Insertion operation cost must be greater or equal to 0" unless opts[:deletion_factor] >= 0
 Trollop::die :substitution_factor, "Insertion operation cost must be greater or equal to 0" unless opts[:substitution_factor] >= 0
 Trollop::die :cost_mode, "Uncorrect cost mode selected" unless ["all","substitution"].include?(opts[:cost_mode])
+Trollop::die :frontiers, "Uncorrect frontiers mode selected" unless ["initial","last","both"].include?(opts[:frontiers])
 
-hypothesis_file = NormalizedEditDistance::LineDescriptionFile.new(opts[:x_file])
+hypothesis_file = NormalizedEditDistance::LineDescriptionFile.new(opts[:x_file],opts[:frontiers].to_sym)
 hypothesis_file.read
 
-target_file = NormalizedEditDistance::LineDescriptionFile.new(opts[:y_file])
+target_file = NormalizedEditDistance::LineDescriptionFile.new(opts[:y_file],opts[:frontiers].to_sym)
 target_file.read
-
 
 ued = NormalizedEditDistance::UED.new(hypothesis_file.frontiers,target_file.frontiers)
 
