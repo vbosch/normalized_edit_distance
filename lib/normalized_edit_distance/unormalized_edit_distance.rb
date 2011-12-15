@@ -27,6 +27,11 @@ module NormalizedEditDistance
       @weight_matrix[@x.length,@y.length] / @length_matrix[@x.length,@y.length].to_f
     end
 
+    def plain_cost
+      calculate unless @calculated
+      @weight_matrix[@x.length,@y.length]
+    end
+
 
 
     def ponderated_normalized_cost
@@ -38,6 +43,11 @@ module NormalizedEditDistance
     def ponderated_length
       calculate_path
       @operations[:substitution]*@type_helper[:substitute]+@operations[:insertion]*@type_helper[:insert]+@operations[:deletion]*@type_helper[:delete]
+    end
+
+    def ponderated_substitution_length
+      calculate_path
+      @operations[:substitution]*@type_helper[:substitute]
     end
 
 
@@ -121,6 +131,37 @@ module NormalizedEditDistance
       end
     end
 
+    def operations_breakdown_hash
+      require 'ap'
+      costs = []
+      lengths = []
+      if is_calculated?
+        current_position = [@x.length,@y.length]
+        while not is_origin?(current_position)
+          operation = operation_backtrack(current_position)
+          costs = update_costs(costs,current_position,operation)
+          lengths= update_lengths(lengths,current_position,operation)
+          current_position = update_path_position(current_position,operation)
+        end
+
+      end
+      return {:costs=> costs,:lengths => lengths}
+    end
+
+    def update_costs(costs,current_position,operation)
+      costs.push(@type_helper.cost(@x[current_position[0]-1], @y[current_position[1]-1])) if operation == :substitution
+      costs.push(@type_helper.cost(@x[current_position[0]-1], :lambda)) if operation == :insertion
+      costs.push(@type_helper.cost(:lambda, @y[current_position[1]-1])) if operation == :deletion
+      return costs
+    end
+
+    def update_lengths(lengths,current_position,operation)
+      lengths.push(@type_helper[:substitute]) if operation == :substitution
+      lengths.push(@type_helper[:insert]) if operation == :insertion
+      lengths.push(@type_helper[:delete]) if operation == :deletion
+      return lengths
+    end
+
     def substitution_cost_only
       cost = 0.0
       ops = 0.0
@@ -131,14 +172,14 @@ module NormalizedEditDistance
           operation = operation_backtrack(current_position)
           if operation == :substitution
             @operations[operation]+=1
-            cost+= @type_helper.cost(@x[current_position[0]-1], @y[current_position[0]-1])
+            cost+= @type_helper.cost(@x[current_position[0]-1], @y[current_position[1]-1])
             ops += 1.0
           end
           current_position = update_path_position(current_position,operation)
         end
 
       end
-      cost/ops
+      cost
     end
 
     def is_origin?(current_position)

@@ -20,6 +20,7 @@ module NormalizedEditDistance
 
     def cost(from, to)
 
+      debugger if insertion?(from, to) and @insertion_difference[to].nil?
       return @costs[:insert] * @insertion_difference[to] if insertion?(from, to)
 
       return @costs[:delete] * @deletion_difference[from] if deletion?(from, to)

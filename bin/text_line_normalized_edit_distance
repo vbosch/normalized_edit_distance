@@ -54,14 +54,24 @@ frontier_helper[:substitute] = opts[:substitution_factor]
 
 ued.type_helper = frontier_helper
 
-cost = ued.ponderated_normalized_cost
+cost = ued.plain_cost
+length = ued.ponderated_length
 
 ued.path_to_file("output.txt")
 
 if opts[:cost_mode] == "substitution"
   cost= ued.substitution_cost_only
+  length= ued.ponderated_substitution_length
+end
+
+cost_squared=0.0
+breakdown_hash = ued.operations_breakdown_hash
+
+breakdown_hash[:costs].each_index do |index|
+    cost_squared+=(breakdown_hash[:costs][index]/breakdown_hash[:lengths][index])**2
 end
 
 ops = ued.operations
 
-puts "Cost mode: #{opts[:cost_mode]} Accuracy: #{cost} (S: #{ops[:substitution]} I: #{ops[:insertion]} D: #{ops[:deletion]})"
+ued.path_to_file("operations.txt")
+puts "Cost mode: #{opts[:cost_mode]} cost: #{cost} length: #{length} (S: #{ops[:substitution]} I: #{ops[:insertion]} D: #{ops[:deletion]} ) cost_squared: #{cost_squared} num_lines: #{breakdown_hash[:costs].size}"
